@@ -1449,6 +1449,8 @@ class gpOutput{
 							'li_title'			=> 'li_title',
 							'haschildren'		=> 'haschildren',
 							'haschildren_li'	=> '',
+							'haschildren_root'	=> 'haschildren',
+							'haschildren_li_root'	=> '',
 							'child_ul'			=> '',
 							);
 
@@ -1532,8 +1534,16 @@ class gpOutput{
 
 			//selected classes
 			if( $this_level < $next_info['level'] ){
-				$attributes_a['class']['haschildren'] = $GP_MENU_CLASSES['haschildren'];
-				$attributes_li['class']['haschildren_li'] = $GP_MENU_CLASSES['haschildren_li'];
+				$attributes_a['class']['haschildren'] = $GP_MENU_CLASSES['haschildren_root'];
+				$attributes_li['class']['haschildren_li'] = $GP_MENU_CLASSES['haschildren_li_root'];
+				if( (int)$this_level === $start_level){
+					$attributes_a['data-toggle']['haschildren'] = $GP_MENU_CLASSES['haschildren_li_root'];
+					$attributes_a['data-target']['haschildren'] = "#";
+				}
+				else{
+					$attributes_a['class']['haschildren'] = $GP_MENU_CLASSES['haschildren'];
+					$attributes_li['class']['haschildren_li'] = $GP_MENU_CLASSES['haschildren_li'];
+				}
 			}
 
 			if( isset($menu_info['url']) && ($menu_info['url'] == $page->title || $menu_info['url'] == $page_title_full) ){
