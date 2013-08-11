@@ -42,6 +42,11 @@
 									'childselected_li'	=> '',
 									'li_'				=> '',
 									'li_title'			=> '',
+									'haschildren' => '',
+									'haschildren_li' => 'dropdown-submenu',
+									'haschildren_root' => 'dropdown-toggle',
+									'haschildren_li_root' => 'dropdown',
+									'child_ul' => 'dropdown-menu',
 									);
 							gpOutput::Get('Menu'); //top level links
 							?>

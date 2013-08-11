@@ -59,6 +59,8 @@ include_once($path);
 									'li_title'			=> '',
 									'haschildren'		=> 'dropdown-toggle',
 									'haschildren_li'	=> 'dropdown',
+									'haschildren_root' => 'dropdown-toggle',
+									'haschildren_li_root' => 'dropdown',
 									'child_ul'			=> 'dropdown-menu',
 									);
 
